@@ -54,7 +54,7 @@ def parallel_worker(process_id,
             # gradient decent loop
             for i in range(nr_of_steps):
                 state = states[i]
-                actor_loss = -critic.Q1(state, actor_z(state)).mean() 
+                actor_loss = -critic(state, actor_z(state)).mean() 
                 optimizer.zero_grad()
                 actor_loss.backward()
                 optimizer.step()
