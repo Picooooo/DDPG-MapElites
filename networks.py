@@ -200,7 +200,7 @@ class Critic(object):
 				
 			for idx, actor in enumerate(self.actors):
 				# Compute the target Q value
-				target_Q = self.critic_target(next_state, self.actor_targets(next_state))
+				target_Q = self.critic_target(next_state, self.actor_targets[idx](next_state))
 				all_target_Q[:,idx] = target_Q.squeeze()
 			# print(all_target_Q)
 			target_Q = torch.max(all_target_Q, dim=1, keepdim=True)[0]
