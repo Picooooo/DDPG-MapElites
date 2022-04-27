@@ -5,7 +5,16 @@ gym.logger.set_level(40)
 import QDgym
 import argparse
 from sklearn.neighbors import KDTree
-import multiprocessing as multiprocessing
+import torch.multiprocessing as multiprocessing
+from torch.multiprocessing import Pool, Process, set_start_method
+try:
+     set_start_method('spawn')
+except RuntimeError:
+    pass
+try:
+     set_start_method('spawn')
+except RuntimeError:
+    pass
 from functools import partial
 import os
 

@@ -10,7 +10,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from multiprocessing import Process, Queue, Event
+from torch.multiprocessing import Process, Queue, Event, set_start_method
+try:
+     set_start_method('spawn')
+except RuntimeError:
+    pass
 from joblib import Parallel, delayed
 
 import time
