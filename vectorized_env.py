@@ -1,11 +1,7 @@
 import numpy as np
 import cloudpickle
 import pickle
-from torch.multiprocessing import Pool, Process, set_start_method, Queue, Event, Pipe
-try:
-     set_start_method('spawn')
-except RuntimeError:
-    pass
+from torch.multiprocessing import Process, Queue, Event, Pipe
 import copy
 import time
 import torch

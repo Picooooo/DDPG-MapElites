@@ -13,14 +13,11 @@ Modified by Olle Nilsson: olle.nilsson19@imperial.ac.uk
 import copy
 import numpy as np
 import torch
-from torch.multiprocessing import Process, Queue, set_start_method
-try:
-    set_start_method('spawn')
-except RuntimeError:
-    pass
+from torch.multiprocessing import Process, Queue
 from functools import partial
 import heapq
 from operator import itemgetter
+
 from vectorized_env import CloudpickleWrapper
 
 
